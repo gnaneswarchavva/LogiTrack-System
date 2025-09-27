@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 public class Cargo {
-    // implement entity here
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

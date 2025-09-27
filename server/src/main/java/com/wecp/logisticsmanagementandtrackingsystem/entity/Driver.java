@@ -9,7 +9,6 @@ import java.util.List;
 
 @Entity
 public class Driver {
-     // implement entity here
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Long id;

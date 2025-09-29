@@ -1,0 +1,93 @@
+.container {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    font-size: 13px;
+    background: #fff;
+    transition:all 0.3s ease;
+  }
+  .container.hover
+  {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+  }
+  
+  .title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color:#333;
+    text-align: center;
+  }
+  
+  .subtitle {
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  label{
+    display: block;
+    font-size:13px;
+    font-weight: 500;
+    color: #444;
+    margin-top: 5px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 6px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s, box-shadow 0.3s;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #49a0e2;
+    color: #fff;
+    transition: background 0.3s,transform 0.2s;
+    
+  }
+  .btn:hover{
+    background:#357ab8;
+    transform: scale(1.02);
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color:#333;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+    color: #357ab8;
+  }
+
+  input{
+    font-size: 13px;
+  }
+
+  select{
+    font-size: 13px;
+  }
+
+  option{
+    font-size: 13px;
+  }

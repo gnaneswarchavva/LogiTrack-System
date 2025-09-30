@@ -1,1 +1,51 @@
-//todo: Complete missing code..
+<div class="container">
+  <h2 class="title">LOGISTIC MANAGEMENT SYSTEM</h2>
+  <p class="subtitle">Please enter your details here</p>
+
+  <form [formGroup]="itemForm" (ngSubmit)="onRegister()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" formControlName="username" type="text" class="form-control" required />
+      <div *ngIf="itemForm.get('username')?.touched && itemForm.get('username')?.invalid" class="text-danger">
+        <div *ngIf="itemForm.get('username')?.hasError('required')">Username is required.</div>
+        <div *ngIf="itemForm.get('username')?.hasError('minlength')">Username must be at least 3 characters long.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input id="email" formControlName="email" type="email" class="form-control" required />
+      <div *ngIf="itemForm.get('email')?.touched && itemForm.get('email')?.invalid" class="text-danger">
+        <div *ngIf="itemForm.get('email')?.hasError('required')">Email is required.</div>
+        <div *ngIf="itemForm.get('email')?.hasError('email')">Please enter a valid email address.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password" class="form-control" required />
+      <div *ngIf="itemForm.get('password')?.touched && itemForm.get('password')?.invalid" class="text-danger">
+        <div *ngIf="itemForm.get('password')?.hasError('required')">Password is required.</div>
+        <div *ngIf="itemForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role</label>
+      <select id="role" formControlName="role" class="form-control">
+        <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+      </select>
+      <div *ngIf="itemForm.get('role')?.touched && itemForm.get('role')?.invalid" class="text-danger">
+        <div *ngIf="itemForm.get('role')?.hasError('invalidRole')">Please select a valid role.</div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="itemForm.invalid">Submit</button>
+    <p *ngIf="showMessage">{{responseMessage}}</p>
+    <div *ngIf="showError" class="text-danger">{{ errorMessage }}</div>
+  </form>
+
+  <div class="login-link">
+    <a href="login">Go to Login</a>
+  </div>
+</div>

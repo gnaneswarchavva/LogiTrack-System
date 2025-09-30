@@ -21,8 +21,8 @@ public class BusinessController {
     }
 
     @GetMapping("/api/business/drivers")
-    public ResponseEntity<List<Driver>> getAllDrivers() {{
-        // return list of drivers
+    public ResponseEntity<List<Driver>> getAllDrivers() {
+        // return list of driver
     }
 
     @GetMapping("/api/business/cargo")
@@ -30,7 +30,7 @@ public class BusinessController {
         // return all cargos with status code 200
     }
 
-    @@PostMapping("/api/business/assign-cargo")
+    @PostMapping("/api/business/assign-cargo")
     public ResponseEntity<String> assignCargoToDriver(@RequestParam Long cargoId, @RequestParam Long driverId) {
         // assign cargo to a driver
         // if assignment is sucess return with sucess message

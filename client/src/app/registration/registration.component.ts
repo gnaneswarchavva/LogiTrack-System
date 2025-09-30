@@ -35,12 +35,16 @@ itemForm!: FormGroup;
     return control.value === 'Choose Role' ? { invalidRole: true } : null;
   }
 onRegister(): void {
-    if (this.itemForm.valid) {
+  console.log("Inside the Method");
+  if (this.itemForm.valid) {
+    console.log("Inside the Method conditions");
     this.showError = false;
     this.showMessage = false;
     this.httpService.registerUser(this.itemForm.value).subscribe(
       
       () => {
+        console.log("Inside the Method conditions with subscription");
+        console.log("Subscribe working");
         this.showMessage = true;
         this.responseMessage = "You have successfully registered!";
         this.itemForm.reset();

@@ -10,5 +10,19 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './addcargo.component.html',
   styleUrls: ['./addcargo.component.scss']
 })
-export class AddcargoComponent 
- //todo: Complete missing code.. 
+export class AddcargoComponent{
+  itemForm: FormGroup;
+  formModel:any={};
+  showError:boolean=false;
+  errorMessage:any;
+  constructor(public router:Router, public httpService:HttpService, private formBuilder: FormBuilder, private authService:AuthService) 
+    {
+      this.itemForm = this.formBuilder.group({
+        //compelete this 
+      username:['',Validators.required],
+      password:['',Validators.required]
+       
+    });
+  }
+} 
+

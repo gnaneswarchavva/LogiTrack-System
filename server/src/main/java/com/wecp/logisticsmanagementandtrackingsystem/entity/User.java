@@ -5,6 +5,6 @@ import javax.persistence.*;
 
 
 public class User {
-   
+    // implement entity here
 }
 

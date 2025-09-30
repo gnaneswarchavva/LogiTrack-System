@@ -1,19 +1,19 @@
 <div class="container">
-    <h2>Logistic Management</h2>
+    <h2 class="h2">Logistic Management</h2>
     <p>Enter Username & Password</p>
     <form [formGroup]="itemForm" (ngSubmit)="onLogin()">
         <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" id="username" placeholder="username" formControlName="username">
             <div *ngIf="itemForm.get('username')?.['invalid'] && (itemForm.get('username')?.['dirty'] || (itemForm.get('username')?.['touched']))">
-                Username is Requeired
+                Username is Required
             </div>
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" id="placeholder" placeholder="**********" formControlName="password">
             <div *ngIf="itemForm.get('password')?.['invalid'] && (itemForm.get('password')?.['dirty'] || (itemForm.get('password')?.['touched']))">
-                Password is Requeired
+                Password is Required
             </div>
         </div>
     

@@ -10,19 +10,34 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@RestController
+@RequestMapping("/api/driver")
 public class DriverController {
 
-    @GetMapping("/api/driver/cargo")
+    @Autowired
+    private DriverService driverService;
+
+    @GetMapping("/cargo")
     public ResponseEntity<List<Cargo>> viewAssignedCargos(@RequestParam Long driverId) {
-        // get assigned cargos for the driver and return with 200 OK
+        List<Cargo> assignedCargos = driverService.viewDriverCargos(driverId);
+        return ResponseEntity.ok(assignedCargos);
     }
+
+    @GetMapping("/getDriverId")
+        public Long getDriverId(@RequestParam Long userId) {
+            return driverService.getDriverIdByUserId(userId);
+        }
 
     @PutMapping("/update-cargo-status")
     public ResponseEntity<String> updateCargoStatus(@RequestParam Long cargoId, @RequestParam String newStatus) {
-        // update the cargo status
-        // if cargo update sucessfully return sucess message
-        // if cargo update failed return failuer message 
+        boolean updateSuccess = driverService.updateCargoStatus(cargoId, newStatus);
+
+        if (updateSuccess) {
+            
+            return ResponseEntity.ok().body("{\"message\": \"Cargo status updated successfully.\"}");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update cargo status.");
+        }
     }
 
 

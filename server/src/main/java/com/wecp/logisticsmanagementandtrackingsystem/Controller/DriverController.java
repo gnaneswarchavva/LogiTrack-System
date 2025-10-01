@@ -1,17 +1,12 @@
 package com.wecp.logisticsmanagementandtrackingsystem.Controller;
-
-
 import com.wecp.logisticsmanagementandtrackingsystem.entity.Cargo;
 import com.wecp.logisticsmanagementandtrackingsystem.service.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
-
-public class DriverController {
+public class DriverController{
 
     @GetMapping("/api/driver/cargo")
     public ResponseEntity<List<Cargo>> viewAssignedCargos(@RequestParam Long driverId) {

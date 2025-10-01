@@ -10,7 +10,9 @@ import { HttpService } from '../../services/http.service';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
-<<<<<<< HEAD
+
+
+
 export class RegistrationComponent implements OnInit{
 itemForm!: FormGroup;
   formModel: any = { role: '', email: '', password: '', username: '' };
@@ -61,22 +63,4 @@ onRegister(): void {
   }
 }
 }
-=======
-export class RegistrationComponent {
 
- //todo: complete missing code..
- itemForm: FormGroup;
- formModel:any={};
- showError:boolean=false;
- errorMessage:any;
- constructor(public router:Router, public httpService:HttpService, private formBuilder: FormBuilder, private authService:AuthService) 
-   {
-     this.itemForm = this.formBuilder.group({
-       //compelete this 
-     username:['',Validators.required],
-     password:['',Validators.required]
-      
-   });
- }
-}
->>>>>>> 4fe52843ca8cafc42acbd5866bd3b553943a46e6

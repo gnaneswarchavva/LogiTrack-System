@@ -1,34 +1,42 @@
+
 package com.wecp.logisticsmanagementandtrackingsystem.entity;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
+//Cargo entity interacts with other three entities - Business, Driver and customer 
 @Entity
 public class Cargo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String content;
     private String size;
-    private String status;
+    private String status; // Status can be 'PENDING', 'IN_TRANSIT', 'DELIVERED'
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="business_id")
+    // Many cargos can be assigned to single business
+    @ManyToOne
     private Business business;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="driver_id")
+    // Many cargos can be assigned to single driver
+    @ManyToOne
     private Driver driver;
 
-    public Cargo() {
-    }
-
-    public Cargo(Long id, String content, String size, String status) {
-        this.id = id;
+    /* Cargo has three properties --> 
+    size, 
+    content, 
+    status (pending, intransit, delivered)
+    */
+    
+    public Cargo(String content, String size, String status, Business business, Driver driver) {
         this.content = content;
         this.size = size;
         this.status = status;
+        this.business = business;
+        this.driver = driver;
+    }
+
+    public Cargo() {
     }
 
     public Long getId() {
@@ -79,4 +87,3 @@ public class Cargo {
         this.driver = driver;
     }
 }
-

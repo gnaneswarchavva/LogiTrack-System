@@ -1,0 +1,104 @@
+/* Container styling */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: #1e293b;
+}
+
+/* Heading */
+.container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f0f10;
+}
+
+
+
+/* Form group styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Labels */
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #101111;
+}
+
+/* Input field */
+.form-control {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 6px rgba(56, 221, 248, 0.3);
+}
+
+/* Button styling */
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(90deg, #38bdf8, #4ade80);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Alert styling */
+.alert {
+  margin-top: 15px;
+  padding: 12px 16px;
+  color: #0f0f10;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Cargo Details Section */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 8px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+ul li strong {
+  color: #0f172a;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+  .btn {
+    width: 100%;
+  }
+}

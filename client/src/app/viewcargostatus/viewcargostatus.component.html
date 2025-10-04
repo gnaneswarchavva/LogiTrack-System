@@ -1,1 +1,36 @@
-//todo: complete missing code.
+<div class="d-flex justify-content-center mt-4">
+  <h2 class="mb-0 text-white">Cargo Status</h2>
+</div>
+<div class="d-flex justify-content-between mt-4">
+  <h2 class="mb-0 text-white">Cargo Status</h2>
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>
+<div class="row mt-3">
+  <div class="card"></div>
+  <div class="card-body">
+    <div class="row mt-3">
+      <div class="col-md-6 offset-md-3">
+        <div class="d-flex justify-content-center">
+          <input class="form-control w-50 " type="text" [(ngModel)]="cargoIdMd" placeholder="Search A.W.B No. ">
+          <div class="input-group-append mx-3">
+            <button class="button" (click)="search()"><span class="span">🔍</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5 d-flex justify-content-center">
+      <div class="card1">
+        <ul>
+          <li>A.W.B No.: <span class="cargoid">{{ cargo.cargoId }}</span></li>
+          <li>Delivery Status: <span
+              [ngClass]="{ 'blue': cargo.status === 'Order Assigned', 'yellow': cargo.status === 'Order In-transit', 'green': cargo.status === 'Order Delivered' }">{{
+              cargo.status }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div *ngIf="showError" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>

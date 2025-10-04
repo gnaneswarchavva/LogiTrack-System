@@ -1,1 +1,16 @@
-//todo: Complete missing code..
+<table>
+    <tr>
+        <th>Sr</th>
+        <th>Content</th>
+        <th>Size</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let cargo of cargList">
+        <td>{{cargo.id}}</td>
+        <td>{{cargo.content}}</td>
+        <td>{{cargo.size}}</td>
+        <td>{{cargo.status}}</td>
+        <td><button>Update</button></td>
+    </tr>
+</table>

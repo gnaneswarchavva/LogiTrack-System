@@ -46,7 +46,10 @@ export class AssginCargoComponent implements OnInit{
           },
         );
   }
-
+  logout() {
+      this.authService.logout(); // clear token or session
+      this.router.navigate(['/login']); // redirect to login page
+    }
   getCargoById() {
       this.httpService.getCargoDetails(this.driverId).subscribe(
         data => {

@@ -1,157 +1,191 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* HTML & Body Styling */
+html,
+body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 /* Container */
 .container {
-    width: 100%;
-    max-width: 420px;
-    padding: 30px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    backdrop-filter: blur(14px);
-    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1), 0 10px 30px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-    text-align: center;
-    box-sizing: border-box;
-    overflow: hidden;
-    animation: slideUp 0.8s ease-out forwards;
-    opacity: 0;
-    transform: translateY(50px);
+  position: relative;
+  top: 80px;
+  flex: 480 0 480px;
+  margin: auto 8% auto auto;
+  padding: 40px 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  color:#000000;
 }
 
 /* Animated Heading */
 .animated-h2 {
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    margin: 0 0 10px 0;
-    white-space: nowrap;
-    background: linear-gradient(270deg, #1e90ff, #00bfff, #0077be, #00ced1, #1e90ff);
-    background-size: 1000% 1000%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px #ffffff;
-    animation: gradientMove 8s ease infinite;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(270deg, #1e90ff, #00bfff, #0077be, #00ced1, #1e90ff);
+  background-size: 1000% 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #000000;
+  animation: gradientMove 8s ease infinite;
 }
 
 /* Paragraph */
 .container p {
-    color: #ffffff;
-    text-align: center;
-    margin: 10px 0 15px 0;
-    font-size: 14px;
+  color: #000000;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 .container p a {
-    color: #ffffff;
-    text-decoration: underline;
-    font-weight: 600;
+  color: #000000;
+  text-decoration: underline;
+  font-weight: 600;
 }
 
 .container p a:hover {
-    color: #00ced1;
+  color: #00ced1;
 }
 
 /* Labels */
-.container label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
-    text-align: left;
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+  text-align: left;
 }
 
 /* Inputs */
-.container input[type="text"],
-.container input[type="email"],
-.container input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 10px;
-    font-size: 15px;
-    box-sizing: border-box;
-    outline: none;
-    background: linear-gradient(145deg, #ffffff, #e0e0e0);
-    color: #000;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-.container a{
-    color: #09080899;
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  background: linear-gradient(145deg, #e0e0e0, #e0e0e0);
+  color: #000;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.container input:focus {
-    transform: scale(1.03);
-    box-shadow: 0 0 10px rgba(30, 144, 255, 0.6);
-    border: 1px solid #1e90ff;
+input:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.6);
+  border: 1px solid #1e90ff;
 }
 
-.container input::placeholder {
-    color: #09080899;
+input::placeholder {
+  color: #666;
 }
 
 /* Submit Button */
-.container button[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-    cursor: pointer;
-    background: linear-gradient(145deg, #1e90ff, #00bfff);
-    box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
-    transition: transform 0.2s, background 0.3s;
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  background: linear-gradient(145deg, #1e90ff, #00bfff);
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.4);
+  transition: transform 0.2s, background 0.3s;
 }
 
-.container button[type="submit"]:hover {
-    transform: scale(1.05);
-    background: linear-gradient(145deg, #00bfff, #1e90ff);
+button[type="submit"]:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #00bfff, #1e90ff);
+}
+
+/* Error Message */
+.error-message {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 8px;
+  text-align: left;
+}
+
+/* Register Link */
+.register-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #000000;
+  /* Black text */
+}
+
+.register-link a {
+  font-weight: 500;
+  color: #1e90ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.register-link a:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* Animations */
 @keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes gradientMove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* Responsive Adjustments */
-@media (max-height: 700px) {
-    .container {
-        padding: 20px;
-    }
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 20px;
+  }
 
-    .animated-h2 {
-        font-size: 28px;
-    }
+  .animated-h2 {
+    font-size: 28px;
+  }
 
-    .container button[type="submit"] {
-        padding: 10px;
-    }
+  button[type="submit"] {
+    padding: 10px;
+  }
 }

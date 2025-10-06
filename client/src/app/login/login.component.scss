@@ -1,34 +1,55 @@
-/* Link Styling */
-a {
-  cursor: pointer;
-  text-decoration: none;
-  color: #1e90ff;
-  transition: color 0.3s;
-}
-a:hover {
-  text-decoration: underline;
-  color: #ffffff;
-}
-
-/* Body Styling */
-body {
+/* General Reset */
+* {
+  
+  padding-inline-start: 30;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  min-height: 100vh;
+}
+
+/* Page Wrapper */
+.page-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+/* Left Banner (optional) */
+.left-banner {
+  flex: 1;
+  //background: url('assets/banner.jpg') no-repeat center center;
+  background-size: cover;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Right Side Login Container */
+.container {
+  position: relative;
+  top: 80px;
+  
+  flex: 480 0 480px;
+  margin: auto 8% auto auto;
+  padding: 40px 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  animation: slideUp 0.8s ease-out forwards;
+  opacity: 20;
+  transform: translateY(50px);
 }
 
 /* Heading Styling */
 .h2 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
-  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+  margin-bottom: 10px;
+  background: linear-gradient(270deg, #0f2027);
   background-size: 1000% 1000%;
   -webkit-text-stroke: 1px #ffffff;
   -webkit-background-clip: text;
@@ -38,37 +59,15 @@ body {
 
 /* Paragraph Styling */
 .p2 {
-  color: #ffffff;
-}
-
-/* Container Styling */
-.container {
-  width: 90%;
-  max-width: 500px;
-  padding: 30px;
-  border-radius: 16px;
-  backdrop-filter: blur(14px);
-  border: 2px solid #ffffff33;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   text-align: center;
-  color: #ffffff;
-  font-size: 15px;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  transition: all 0.3s ease;
-  animation: slideUp 0.8s ease-out forwards;
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-.container:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #000000;
 }
 
 /* Form Group Styling */
 .form-group {
   margin-bottom: 20px;
-  text-align: left;
 }
 
 .form-group label {
@@ -85,6 +84,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
+  background-color: #f9f9f9;
   transition: border 0.3s, box-shadow 0.3s;
 }
 
@@ -103,14 +103,14 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  background: #1e90ff;
+  background: linear-gradient(135deg, #1e90ff, #4682b4);
   color: #fff;
   transition: background 0.3s, transform 0.2s;
 }
 
 .btn:hover:not(:disabled) {
-  background: #4682b4;
-  transform: scale(1.02);
+  background: linear-gradient(135deg, #4682b4, #1e90ff);
+  transform: scale(1.03);
 }
 
 .btn:disabled {
@@ -123,6 +123,7 @@ body {
   color: #ff6b6b;
   font-size: 13px;
   margin-top: 8px;
+  text-align: left;
 }
 
 /* Register Link */
@@ -136,6 +137,13 @@ body {
 .register-link a {
   font-weight: 500;
   color: #add8e6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.register-link a:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* No Account Text */
@@ -143,14 +151,14 @@ body {
   font-size: 13px;
   text-align: center;
   margin-top: 10px;
-  color: #ffffff;
+  color: #000000;
 }
 
 /* Animations */
 @keyframes gradientMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes slideUp {
@@ -161,5 +169,26 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-wrapper {
+    flex-direction: column;
+  }
+
+  .left-banner {
+    display: none;
+  }
+
+  .container {
+    margin: auto;
+    width: 90%;
   }
 }

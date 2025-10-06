@@ -1,21 +1,29 @@
 /* Search Bar Styling */
 .search {
-    margin-left: 200px;
-    margin-right: 3px;
-    padding: 8px 16px;
-    border-radius: 8px;
-    border: none;
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
-    color: #fff;
-    font-size: 14px;
-    box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
-    transition: transform 0.2s, box-shadow 0.3s;
+  margin-left: 200px;
+  margin-right: 3px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(0, 114, 255, 0.2);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+}
+
+.search::placeholder {
+  color: #e0e0e0;
+  font-weight: 400;
 }
 
 .search:focus {
-    outline: none;
-    transform: scale(1.03);
-    box-shadow: 0 0 10px rgba(0, 198, 255, 0.6);
+  outline: none;
+  transform: scale(1.03);
+  background: rgba(0, 198, 255, 0.3);
+  box-shadow: 0 0 12px rgba(0, 198, 255, 0.6);
 }
 
 /* DataTable Sorting Icons */
@@ -29,25 +37,53 @@ table.dataTable thead .sorting_desc:after,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
-    bottom: 0.5em;
-    color: #00bcd4;
-    font-size: 12px;
-    opacity: 0.8;
-    transition: color 0.3s ease;
+  bottom: 0.5em;
+  color: #00bcd4;
+  font-size: 12px;
+  opacity: 0.8;
+  transition: color 0.3s ease;
 }
 
 /* Table Header Styling */
 table.dataTable thead th {
-    background: linear-gradient(135deg, #0072ff, #00c6ff);
-    color: #ffffff;
-    font-weight: bold;
-    border-bottom: 2px solid #00bcd4;
-    padding: 12px;
-    text-align: left;
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  color: #ffffff;
+  font-weight: 700;
+  border-bottom: 2px solid #00bcd4;
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 15px;
+  letter-spacing: 0.5px;
 }
 
-/* Table Row Hover Effect */
+/* Table Row Styling */
+table.dataTable tbody tr {
+  transition: background-color 0.3s ease;
+}
+
 table.dataTable tbody tr:hover {
-    background-color: rgba(0, 198, 255, 0.1);
-    transition: background-color 0.3s ease;
+  background-color: rgba(0, 198, 255, 0.1);
+}
+
+/* Table Cell Styling */
+table.dataTable tbody td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #f0f0f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .search {
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  table.dataTable thead th,
+  table.dataTable tbody td {
+    font-size: 13px;
+    padding: 10px;
+  }
 }
